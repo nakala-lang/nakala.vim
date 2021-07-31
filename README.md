@@ -51,3 +51,13 @@ call dein#add('reaganmcf/nakala.vim')
 ```vim
 NeoBundle 'reaganmcf/nakala.vim'
 ```
+
+## License
+`nakala.vim` is distributed under the MIT license
+
+[vim8pack]: http://vimhelp.appspot.com/repeat.txt.html#packages
+[v]: https://github.com/gmarik/vundle
+[p]: https://github.com/tpope/vim-pathogen
+[vp]: https://github.com/junegunn/vim-plug
+[d]: https://github.com/Shougo/dein.vim
+[nb]: https://github.com/Shougo/neobundle.vim
