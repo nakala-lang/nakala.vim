@@ -10,6 +10,7 @@ syntax keyword nakKeywords
   \ or
   \ not 
   \ if
+  \ else 
 
 " match booleans
 syntax keyword nakBoolean 
