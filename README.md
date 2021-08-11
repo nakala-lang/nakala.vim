@@ -1,6 +1,6 @@
 # nakala.vim
 
-Simple vim syntax highlighting for [nakala](https://github.com/reaganmcf/nakala)
+Simple vim syntax highlighting for [nakala](https://github.com/nakala-lang/nakala)
 
 ## Installation
 
@@ -19,37 +19,37 @@ section.
 ### [Vim8 packages][vim8pack]
 
 ```sh
-git clone https://github.com/reaganmcf/nakala.vim ~/.vim/pack/plugins/start/nakala.vim
+git clone https://github.com/nakala-lang/nakala.vim ~/.vim/pack/plugins/start/nakala.vim
 ```
 
 ### [Vundle][v]
 
 ```vim
-Plugin 'reaganmcf/nakala.vim'
+Plugin 'nakala-lang/nakala.vim'
 ```
 
 ### [Pathogen][p]
 
 ```sh
-git clone --depth=1 https://github.com/reaganmcf/nakala.vim.git ~/.vim/bundle/nakala.vim
+git clone --depth=1 https://github.com/nakala-lang/nakala.vim.git ~/.vim/bundle/nakala.vim
 ```
 
 ### [vim-plug][vp]
 
 ```vim
-Plug 'reaganmcf/nakala.vim'
+Plug 'nakala-lang/nakala.vim'
 ```
 
 ### [dein.vim][d]
 
 ```vim
-call dein#add('reaganmcf/nakala.vim')
+call dein#add('nakala-lang/nakala.vim')
 ```
 
 ### [NeoBundle][nb]
 
 ```vim
-NeoBundle 'reaganmcf/nakala.vim'
+NeoBundle 'nakala-lang/nakala.vim'
 ```
 
 ## License
