@@ -11,6 +11,7 @@ syntax keyword nakKeywords
   \ not 
   \ if
   \ else 
+  \ ret
 
 " match booleans
 syntax keyword nakBoolean 
