@@ -12,7 +12,8 @@ syntax keyword nakKeywords
   \ if
   \ else 
   \ ret 
-  \ struct
+  \ class
+  \ new
 
 " match booleans
 syntax keyword nakBoolean 
