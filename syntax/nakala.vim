@@ -14,6 +14,7 @@ syntax keyword nakKeywords
   \ ret 
   \ class
   \ new
+  \ fields
 
 " match booleans
 syntax keyword nakBoolean 
