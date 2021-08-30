@@ -15,6 +15,8 @@ syntax keyword nakKeywords
   \ class
   \ new
   \ fields
+  \ for
+  \ in
 
 " match booleans
 syntax keyword nakBoolean 
