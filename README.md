@@ -16,6 +16,12 @@ Most plugin managers don't do this automatically, so these statements are
 usually added by users in their `vimrc` _right after_ the plugin manager load
 section.
 
+### [Packer][packer]
+
+```lua
+use 'nakala-lang/nakala.vim'
+```
+
 ### [Vim8 packages][vim8pack]
 
 ```sh
@@ -55,6 +61,7 @@ NeoBundle 'nakala-lang/nakala.vim'
 ## License
 `nakala.vim` is distributed under the MIT license
 
+[packer]: https://github.com/wbthomason/packer.nvim
 [vim8pack]: http://vimhelp.appspot.com/repeat.txt.html#packages
 [v]: https://github.com/gmarik/vundle
 [p]: https://github.com/tpope/vim-pathogen

@@ -1,67 +1,83 @@
-syntax case ignore
-syntax case match
+if exists("b:current_syntax")
+  finish
+endif
 
-" match keywords
-syntax keyword nakKeywords
-  \ fn 
-  \ call
-  \ let
-  \ and
-  \ or
-  \ not 
-  \ if
-  \ else 
-  \ ret 
-  \ class
-  \ new
-  \ fields
-  \ for
-  \ in
+let s:cpo_save = &cpo
+set cpo&vim
 
-" match booleans
-syntax keyword nakBoolean 
-  \ true
-  \ false
+let s:nak_syntax_keywords = {
+  \   'nakConditional' :["if"
+  \ ,                    "else"
+  \ ,                   ]
+  \ , 'nakRepeat' :["until"
+  \ ,              ]
+  \ , 'nakExecution' :["ret"
+  \ ,                 ]
+  \ , 'nakBoolean' :["true"
+  \ ,                "false"
+  \ ,               ]
+  \ , 'nakKeyword' :["func"
+  \ ,               ]
+  \ , 'nakWordOperator' :["and"
+  \ ,                     "or"
+  \ ,                    ]
+  \ , 'nakVarDecl' :["let"
+  \ ,               ]
+  \ , 'nakType' :["int"
+  \ ,             "float"
+  \ ,             "bool"
+  \ ,             "string"
+  \ ,             "any"
+  \ ,            ]
+  \ , 'nakConstant' :["this"
+  \ ,                 "super"
+  \ ,                 "null"
+  \ ,                 "constructor"
+  \ ,                ]
+  \ , 'nakStructure' :["class"
+  \ ,                 ]
+  \ , }
 
-" match comments
-syntax match nakComment "\v#.*$" fold
+function! s:syntax_keyword(dict)
+  for key in keys(a:dict)
+    execute 'syntax keyword' key join(a:dict[key], ' ')
+  endfor
+endfunction
 
-" match operators
-syntax match nakOperator "\v\+"
-syntax match nakOperator "\v\-"
-syntax match nakOperator "\v\*"
-syntax match nakOperator "\v\/"
-syntax match nakOperator "\v\<"
-syntax match nakOperator "\v\>"
-syntax match nakOperator "\v\="
+call s:syntax_keyword(s:nak_syntax_keywords)
 
-" idents 
- syntax match nakIdentifier "\v[A-Za-z][A-Za-z0-9_]"
+syntax match nakDecNumber display "\v<\d%(_?\d)*"
 
-" functions
-syntax match nakFunction "\w\(\w\)*("he=e-1,me=e-1 
+syntax match nakOperator display "\V\[-+/*=^!><%~:;,]"
 
-" match numbers
-syntax match nakNumber "\v<\d+>"
+syntax match nakFunction /\w\+\s*(/me=e-1,he=e-1
 
-" match strings
-syntax region nakString start=/"/ skip=/\\"/ end=/"/ oneline
+syntax region nakBlock start="{" end="}" transparent fold
 
-" set highlights
+syntax region nakCommentLine start="//" end="$"
 
+syntax region nakString matchgroup=nakStringDelimiter start=+"+ skip=+\\\\\|\\"+ end=+"+ oneline contains=nakEscape
+syntax match nakEscape  display contained /\\./
 
-highlight default link nakString String
-highlight default link nakNumber Number
-highlight default link nakBoolean Boolean
+highlight default link nakDecNumber nakNumber
 
-highlight default link nakOperator Operator
-highlight default link nakKeywords Keyword
-highlight default link nakFunction Function
-
+highlight default link nakKeyword Keyword
+highlight default link nakType Type
+highlight default link nakCommentLine Comment
 highlight default link nakComment Comment
+highlight default link nakString String
+highlight default link nakStringDelimiter String
+highlight default link nakBoolean Boolean
+highlight default link nakConstant Constant
+highlight default link nakFunction Function
+highlight default link nakNumber Number
+highlight default link nakOperator Operator
+highlight default link nakStructure Structure
+highlight default link nakConditional Conditional
+highlight default link nakRepeat Repeat
+highlight default link nakVarDecl Define
 
+let b:current_syntax = "nak"
 
-syn sync minlines=200
-syn sync maxlines=500
-
-let b:current_syntax="nakala"
+let &cpo = s:cpo_save
+unlet! s:cpo_save
