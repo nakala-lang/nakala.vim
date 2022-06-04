@@ -1,5 +1,9 @@
 # nakala.vim
 
+<p align="center">
+  <img src="./assets/example.png" width="400" />
+</p>
+
 Simple vim syntax highlighting for [nakala](https://github.com/nakala-lang/nakala)
 
 ## Installation
