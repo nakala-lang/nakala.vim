@@ -73,6 +73,7 @@ highlight default link nakConstant Constant
 highlight default link nakFunction Function
 highlight default link nakNumber Number
 highlight default link nakOperator Operator
+highlight default link nakExecution Special
 highlight default link nakStructure Structure
 highlight default link nakConditional Conditional
 highlight default link nakRepeat Repeat
