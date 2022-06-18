@@ -22,6 +22,7 @@ let s:nak_syntax_keywords = {
   \ ,                     "or"
   \ ,                    ]
   \ , 'nakVarDecl' :["let"
+  \ ,                "static"
   \ ,               ]
   \ , 'nakType' :["int"
   \ ,             "float"
@@ -30,11 +31,11 @@ let s:nak_syntax_keywords = {
   \ ,             "any"
   \ ,            ]
   \ , 'nakConstant' :["this"
-  \ ,                 "super"
   \ ,                 "null"
   \ ,                 "constructor"
   \ ,                ]
   \ , 'nakStructure' :["class"
+  \ ,                  "enum"
   \ ,                 ]
   \ , }
 
